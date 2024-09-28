@@ -1,103 +1,67 @@
-# HogwartsJTT
-A text based adventure game, I created for my software design semester project 
+**Overview**
 
+Hogwarts: A Journey Through Time is a text-based adventure game created as part of the COE 312 Software Design semester project at the American University of Sharjah. This game offers players an immersive experience in the magical world of Harry Potter, allowing them to travel through time and participate in significant historical events within the wizarding world.
 
+Players will encounter iconic battles, engage with legendary characters, and utilize various magical objects and spells. With a focus on strategic gameplay and rich storytelling, this game aims to captivate Harry Potter fans and RPG enthusiasts alike. The game’s design incorporates several software design patterns, enhancing its structure, flexibility, and maintainability.
 
-AMERICAN UNIVERSITY OF SHARJAH
-College of Engineering
-Spring 2023
-COE 312 Semester Project - Group 6
-Hogwarts: A Journey Through Time
-Name 
-ID
-Warda Ul Hasan 
-g00090299
-Harsh Surana 
-b00088424
-Aadib Kohinoor 
-b00087778
-Fatima Almarashda 
-g00085415
-Instructor names: 
-Dr. Omar Arif & Mr. Ali Reza Sajun
-Submission date: 
-May 8th, 2023
+For a visual overview of the game, please refer to our YouTube playlist at www.youtube.com/playlist?list=PLa33B7Q7GDot3L961OvjiXvq9no3395br
 
-Overview of the Game
-Provide a clear description of how the game works. Justify why you think it is a good game 
-and why people would love to play it. Please include the YouTube video link in this section 
-showing how the game works. 
-This game would be a fun choice to play as it seamlessly combines multiple captivating 
-elements. With its time traveling concept set in the magical world of Harry Potter, players are 
-immersed in an RPG experience that allows them to explore different historical periods and 
-engage in thrilling battles. From the founding members' clash to the epic confrontations 
-against Grindelwald and Voldemort, the diverse scenes ensure a sense of progression and 
-keep the gameplay engaging. Alongside an array of objects, potions, weapons, relics, and 
-battle items, players can strategize and customize their approach, adding depth to their 
-adventure. Furthermore, the integration of design patterns, including Observer/Singleton, 
-Template Method, Strategy, State, and Command, contributes to the game's structure, 
-flexibility, and maintainability. The incorporation of sensors, such as gyroscope, 
-accelerometer, and sound sensor, for spell casting and environmental interaction adds an 
-immersive and dynamic element. With its combination of a compelling storyline, strategic 
-gameplay, interactive features, and the enchanting world of Harry Potter, this game promises 
-an enjoyable and captivating experience for players.
-https://www.youtube.com/playlist?list=PLa33B7Q7GDot3L961OvjiXvq9no3395br
-Description of Game Components
-Provide a description of the components of the game. Each subsection should describe in 
-detail each component of the game. 
+**Game Components**
 
 Objective
-The objective of this game was to cohesively integrate various design patterns and 
-software design strategies to build a fun little RPG based on a time traveling concept 
-within the Harry Potter wizarding world.
+The primary objective of Hogwarts: A Journey Through Time is to integrate various software design patterns into a cohesive and enjoyable RPG experience. Set in the Harry Potter universe, the game revolves around a time-traveling concept where players participate in pivotal battles throughout wizarding history.
+
 Scenes
-
-Intro: 
-We are introduced to the main characters. They wander in the library and discover a 
-time travel spell which sends the main character (player) back in time.
-
-Act I: 
-The player finds themselves in the midst of the battle among the founding members 
-of Hogwarts. The battle takes place and upon the player’s victory, they are 
-transported to the next point in time.
-
-Act II:
-The player is transported to the great Grindelwald battle. Here they must aid in 
-defeating Grindelwald, else risk permanently being trapped in this part of time. Upon 
-the player's victory they are transported to the final point in time explored in this 
-game.
-
-Act III
-The player is transported to perhaps the greatest ever battle at Hogwarts; that against 
-Voldermort and the death eaters. The player must aid in defeating Voldermort, which 
-in turn rewards them with a relic enabling them to return to their own timeline.
-
+Intro: The player and their friends, Lucius and Eve, discover a time travel spell in the Hogwarts library. This spell inadvertently sends the player back in time, setting the stage for their adventure.
+Act I: The player is transported to the era of Hogwarts' founding members, where they must engage in a battle. Upon victory, the player moves forward in time.
+Act II: The player finds themselves in the midst of the great battle against Grindelwald. Success in this battle is crucial, as failure would trap the player in this timeline forever.
+Act III: The final battle takes place at Hogwarts, where the player aids in the fight against Voldemort and the Death Eaters. Victory here allows the player to acquire a relic that enables them to return to their original timeline.
 Objects
 Potions: Wolfsbane, Veritaserum
 Weapons: Wand
 Relics: Time Turner
 Battle Items: Snake Skin, Wolf Elixir
-
 Characters
-The Player, Lucius (friend), Eve (friend)
-Godrick Gryffindor, Salazar Slytherin, Rowena Ravenclaw, Helga Hufflepuff
-Newt Scammander, Dumbeldore, Grindelwald
-Harry Potter, Ron Weasly, Heroine Granger, Voldermort 
-
+The Player
+Lucius (Friend)
+Eve (Friend)
+Godric Gryffindor, Salazar Slytherin, Rowena Ravenclaw, Helga Hufflepuff
+Newt Scamander, Dumbledore, Grindelwald
+Harry Potter, Ron Weasley, Hermione Granger, Voldemort
 Sensors
-Sensors were used primarily to cast special spells - two of these sensors were used as 
-battle spells (Expelliarmus and Avada Kedavra) and one to light up the player’s 
-surroundings when prompted (Lumos). The three types of sensors used were 
-Gyroscope, Accelerometer, and Sound Sensor
+Special sensors were incorporated to enhance the gameplay experience:
 
-Observer/Singleton 
-Each battle is timed. The player must complete the battle in a finite amount of time or
-else the game is lost. A clock (subject) counts the “time” and passes this information 
-to a Battle class (Observer) which keeps track of the time and is in charge of 
-conducting the battle. Also, the “Player” class is a Singleton class.
+Gyroscope and Accelerometer: Used for casting battle spells like Expelliarmus and Avada Kedavra.
+Sound Sensor: Used for casting Lumos to light up the player’s surroundings.
+Design Patterns
+Observer/Singleton: Each battle is timed. A clock (subject) counts down the time and passes this information to a Battle class (Observer), which manages the battle accordingly. The Player class is implemented as a Singleton.
+Template Method: This pattern was used to create potions that boost the player’s health by either 40% or 80%. The creation process for both types of potions is the same, differing only in the ingredients collected after battles.
+How to Play
 
-Template Method
-The template method was used to develop potions that can increase either 40% or 
-80% of a player’s health. These potions are made in the exact same manner, except 
-the difference in the ingredients which are picked up after battles.
+Start the Game: Follow the instructions to begin your adventure in the Hogwarts library.
+Explore Scenes: Navigate through different time periods by winning battles in each act.
+Use Objects and Potions: Collect and use various magical items to aid you in battles.
+Cast Spells: Utilize sensors to cast spells during battles and in other interactive moments.
+Complete the Game: Defeat Voldemort in the final battle to return to your timeline and complete your journey.
+Enjoy your adventure through time in the world of Hogwarts!
 
+**Installation and Setup**
+
+Requirements: Ensure your system meets the necessary software and hardware requirements for running the game.
+Installation: Follow the provided instructions to install the game on your system.
+Running the Game: Execute the main file to start the game and follow on-screen instructions.
+For further assistance, please refer to the game's documentation or contact the project developers.
+
+**Credits**
+
+Developers:
+
+Warda Ul Hasan (g00090299)
+Harsh Surana (b00088424)
+
+**Instructors**
+
+Dr. Omar Arif
+Mr. Ali Reza Sajun
+
+This project was developed as part of the COE 312 Software Design course at the American University of Sharjah.
